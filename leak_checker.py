@@ -25,7 +25,7 @@ def check_leak(email):
         result_text = f"found leaked for {email}:\n\n"
         for entry in data['result']:
             source = entry.get('sources', ['unknown sources'])[0]
-            has_password = "Так" if entry.get('hash') else "Ні"
+            has_password = "Yes" if entry.get('hash') else "No"
             result_text += f"🔹 Source: {source}\n   Password: {has_password}\n\n"
         
         return result_text
